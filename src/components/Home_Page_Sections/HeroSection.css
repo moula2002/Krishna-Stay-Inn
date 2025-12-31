@@ -1,0 +1,715 @@
+/* Enhanced Hero Section Styles - Mobile Responsive */
+
+/* New Keyframe Animations - Optimized for mobile */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes scaleUpMobile {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(5px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(5px) translateX(-5px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-3px) rotate(270deg);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes swipeIndicator {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
+
+@keyframes swipeIndicatorLeft {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Apply Animations with mobile optimization */
+.enhanced-slide-image {
+  animation: scaleUp 30s ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+  .enhanced-slide-image {
+    animation: scaleUpMobile 20s ease-in-out forwards;
+  }
+}
+
+.animate-text-reveal {
+  animation: textReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 25s linear infinite;
+}
+
+.animate-shine {
+  animation: shine 1.2s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-glow {
+    animation: none;
+  }
+}
+
+.animate-particle-float {
+  animation: particleFloat 15s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+.animate-swipe-indicator {
+  animation: swipeIndicator 2s ease-in-out infinite;
+}
+
+.animate-swipe-indicator-left {
+  animation: swipeIndicatorLeft 2s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Text Gradient Effect */
+.text-gradient {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #ff6b95 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .text-gradient {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  }
+}
+
+/* Enhanced Hero Container */
+.enhanced-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Parallax Container - Disabled on mobile */
+@media (min-width: 769px) {
+  .parallax-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+}
+
+/* Light Streaks Effect - Mobile hidden */
+.light-streaks {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shine 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Grid Pattern - Mobile hidden */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
+}
+
+/* Enhanced Dots */
+.slick-dots {
+  bottom: 20px !important;
+}
+
+.slick-dots li {
+  margin: 0 2px !important;
+}
+
+.slick-dots li button:before {
+  display: none !important;
+}
+
+/* Enhanced Arrow Styles for Desktop */
+.enhanced-arrow {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+.enhanced-arrow.slick-next {
+  right: 20px !important;
+}
+
+.enhanced-arrow.slick-prev {
+  left: 20px !important;
+}
+
+.enhanced-arrow::before {
+  display: none !important;
+}
+
+/* Mobile Navigation Indicators */
+.mobile-nav-indicators {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-indicators {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 30;
+    pointer-events: none;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .mobile-nav-indicator {
+    pointer-events: auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+  }
+  
+  .mobile-nav-indicator:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+  }
+  
+  .mobile-nav-indicator:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-nav-indicator svg {
+    color: white;
+    font-size: 14px;
+  }
+  
+  .mobile-nav-indicator.prev {
+    margin-left: 5px;
+  }
+  
+  .mobile-nav-indicator.next {
+    margin-right: 5px;
+  }
+  
+  /* Swipe hint text */
+  .swipe-hint {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2s forwards;
+  }
+  
+  .swipe-hint svg {
+    font-size: 10px;
+    opacity: 0.8;
+  }
+  
+  .swipe-hint-left {
+    animation: swipeIndicatorLeft 1.5s ease-in-out infinite;
+  }
+  
+  .swipe-hint-right {
+    animation: swipeIndicator 1.5s ease-in-out infinite;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch-friendly hover states */
+@media (hover: hover) and (pointer: fine) {
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .enhanced-hero {
+    height: 70vh !important;
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  .slick-slide {
+    height: 70vh !important;
+  }
+  
+  .slick-slider {
+    position: relative;
+    height: 100%;
+  }
+  
+  .particle {
+    display: none !important;
+  }
+  
+  .light-streaks,
+  .grid-pattern {
+    display: none;
+  }
+  
+  /* Hide desktop arrows on mobile */
+  .slick-arrow {
+    display: none !important;
+  }
+  
+  .slick-dots {
+    bottom: 70px !important;
+  }
+  
+  /* Make dots more visible on mobile */
+  .slick-dots li div {
+    width: 8px !important;
+    height: 8px !important;
+    background: rgba(255, 255, 255, 0.4) !important;
+  }
+  
+  .slick-dots li.slick-active div {
+    background: linear-gradient(135deg, #f6d365, #fda085) !important;
+    width: 10px !important;
+    height: 10px !important;
+  }
+  
+  /* Mobile navigation container */
+  .mobile-nav-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .mobile-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  .mobile-nav-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-nav-btn svg {
+    color: white;
+    font-size: 16px;
+  }
+  
+  /* Disable complex animations on low-end devices */
+  @media (max-width: 480px) {
+    .enhanced-slide-image {
+      animation: none !important;
+    }
+    
+    .text-gradient {
+      animation: none !important;
+    }
+    
+    .mobile-nav-indicator {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .swipe-hint {
+      bottom: 50px;
+      font-size: 10px;
+      padding: 4px 10px;
+    }
+  }
+  
+  /* For very small screens */
+  @media (max-width: 360px) {
+    .mobile-nav-indicators {
+      padding: 0 5px;
+    }
+    
+    .mobile-nav-indicator {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .mobile-nav-indicator svg {
+      font-size: 12px;
+    }
+    
+    .slick-dots {
+      bottom: 60px !important;
+    }
+  }
+}
+
+/* Smooth transitions */
+.slick-slide {
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.slick-active {
+  z-index: 2;
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .enhanced-hero {
+    height: 85vh !important;
+  }
+  
+  .slick-slide {
+    height: 85vh !important;
+  }
+  
+  .grid-pattern {
+    background-size: 30px 30px;
+  }
+  
+  /* Tablet arrow adjustments */
+  .enhanced-arrow.slick-next {
+    right: 15px !important;
+  }
+  
+  .enhanced-arrow.slick-prev {
+    left: 15px !important;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  .enhanced-hero {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  .slick-dots li div,
+  .enhanced-feature,
+  .mobile-nav-indicator,
+  .mobile-nav-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Smaller touch targets for navigation indicators */
+  .mobile-nav-indicator {
+    min-height: 36px;
+    min-width: 36px;
+  }
+}
+
+/* Loading optimization */
+.enhanced-slide-image {
+  will-change: transform;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .enhanced-slide-image {
+    animation: none !important;
+  }
+  
+  .animate-text-reveal,
+  .animate-slide-up,
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-swipe-indicator,
+  .animate-swipe-indicator-left,
+  .animate-bounce {
+    animation: none;
+  }
+}
+
+/* Mobile gesture support */
+@media (max-width: 768px) {
+  .slick-slider {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Improve swipe experience */
+  .slick-track {
+    display: flex;
+  }
+  
+  .slick-slide {
+    height: 100%;
+    flex: 0 0 auto;
+  }
+}
+
+/* Accessibility improvements */
+.mobile-nav-indicator:focus,
+.mobile-nav-btn:focus {
+  outline: 2px solid rgba(255, 193, 7, 0.6);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mobile-nav-indicator {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+  }
+  
+  .swipe-hint {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid white;
+    color: white;
+  }
+}

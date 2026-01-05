@@ -99,6 +99,12 @@ const HomeContactUsSection = () => {
     }
   };
 
+  // Combined variants for cards
+  const combinedCardVariants = {
+    ...itemVariants,
+    hover: cardHoverVariants.hover
+  };
+
   return (
     <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
       {/* Animated Background Elements */}
@@ -155,9 +161,8 @@ const HomeContactUsSection = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
         >
           <motion.div 
-            variants={itemVariants}
+            variants={combinedCardVariants}
             whileHover="hover"
-            variants={cardHoverVariants}
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -181,9 +186,8 @@ const HomeContactUsSection = () => {
           </motion.div>
 
           <motion.div 
-            variants={itemVariants}
+            variants={combinedCardVariants}
             whileHover="hover"
-            variants={cardHoverVariants}
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -205,9 +209,8 @@ const HomeContactUsSection = () => {
           </motion.div>
 
           <motion.div 
-            variants={itemVariants}
+            variants={combinedCardVariants}
             whileHover="hover"
-            variants={cardHoverVariants}
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>

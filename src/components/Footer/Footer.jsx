@@ -8,7 +8,6 @@ import {
   FaTv,
   FaFacebookF,
   FaInstagram,
-  FaTwitter,
   FaYoutube,
   FaArrowUp,
   FaWhatsapp
@@ -61,7 +60,6 @@ const Footer = () => {
   const socialLinks = [
     { icon: <FaFacebookF />, link: "#", color: "hover:bg-red-800", bg: "bg-red-900" },
     { icon: <FaInstagram />, link: "#", color: "hover:bg-rose-700", bg: "bg-rose-800" },
-    { icon: <FaTwitter />, link: "#", color: "hover:bg-red-900", bg: "bg-red-950" },
     { icon: <FaYoutube />, link: "#", color: "hover:bg-red-700", bg: "bg-red-600" },
     { icon: <FaWhatsapp />, link: "#", color: "hover:bg-green-700", bg: "bg-green-600" },
   ];

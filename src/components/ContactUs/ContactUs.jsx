@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   FaMapMarkerAlt, 
   FaPhoneAlt, 
@@ -8,7 +8,8 @@ import {
   FaClock,
   FaPaperPlane,
   FaCheckCircle,
-  FaUser
+  FaUser,
+  FaTimes
 } from "react-icons/fa";
 
 // Import your room image
@@ -37,16 +38,15 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        "your_service_id",
-        "your_template_id",
+        "service_pcauzy4",
+        "template_5imvk1a",
         e.target,
-        "your_user_id"
+        "KHXf0EoVTmzLbqz0Y"
       )
       .then(
         (result) => {
           setIsSending(false);
           setIsSent(true);
-          setTimeout(() => setIsSent(false), 3000);
           setFormData({ name: "", email: "", subject: "", message: "" });
         },
         (error) => {
@@ -85,6 +85,41 @@ const ContactUs = () => {
 
   return (
     <main className="min-h-screen bg-gray-50">
+      {/* Success Pop-up Message */}
+      <AnimatePresence>
+        {isSent && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-6 right-6 z-50 max-w-md"
+          >
+            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl shadow-2xl border-2 border-emerald-300">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <FaCheckCircle className="text-3xl animate-pulse" />
+                    <div className="absolute inset-0 bg-emerald-400 rounded-full blur-md opacity-50"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Message Sent Successfully!</h3>
+                    <p className="text-sm text-emerald-100">
+                      Thank you for contacting us. We'll get back to you soon.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsSent(false)}
+                  className="text-white hover:text-emerald-100 transition-colors"
+                >
+                  <FaTimes className="text-lg" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Hero Header Section - UPDATED WITH BACKGROUND IMAGE */}
       <section className="relative h-[450px] md:h-[550px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

@@ -72,7 +72,7 @@ const ContactUs = () => {
     {
       icon: <FaEnvelope className="text-xl" />,
       title: "Email Address",
-      details: ["info@shrikrishnastay.com", "support@shrikrishnastay.com"],
+      details: ["krishnastayinn@gmail.com", "krishnastayinn2026@gmail.com"],
       color: "from-amber-500 to-orange-400"
     },
     {

@@ -8,16 +8,16 @@ import {
   FaClock,
   FaPaperPlane,
   FaCheckCircle,
-  FaUser,
   FaTimes
 } from "react-icons/fa";
 
-// Import your room image
+// Hero Image
 import contactHeroBg from "../../assets/Home_Page_Banners/slide3.webp"; 
 
 const ContactUs = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,10 +26,7 @@ const ContactUs = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const sendEmail = (e) => {
@@ -44,12 +41,12 @@ const ContactUs = () => {
         "KHXf0EoVTmzLbqz0Y"
       )
       .then(
-        (result) => {
+        () => {
           setIsSending(false);
           setIsSent(true);
           setFormData({ name: "", email: "", subject: "", message: "" });
         },
-        (error) => {
+        () => {
           setIsSending(false);
           alert("Failed to send message. Please try again.");
         }
@@ -72,7 +69,7 @@ const ContactUs = () => {
     {
       icon: <FaEnvelope className="text-xl" />,
       title: "Email Address",
-      details: ["info@shrikrishnastay.com", "support@shrikrishnastay.com"],
+      details: ["krishnastayinn@gmail.com", "krishnastayinn2026@gmail.com"],
       color: "from-amber-500 to-orange-400"
     },
     {
@@ -85,34 +82,29 @@ const ContactUs = () => {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Success Pop-up Message */}
+      
+      {/* SUCCESS MESSAGE */}
       <AnimatePresence>
         {isSent && (
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="fixed top-6 right-6 z-50 max-w-md"
+            className="fixed top-6 right-4 md:right-6 z-50 max-w-md"
           >
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl shadow-2xl border-2 border-emerald-300">
+            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl shadow-2xl">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="relative">
-                    <FaCheckCircle className="text-3xl animate-pulse" />
-                    <div className="absolute inset-0 bg-emerald-400 rounded-full blur-md opacity-50"></div>
-                  </div>
+                  <FaCheckCircle className="text-3xl animate-pulse" />
                   <div>
-                    <h3 className="font-bold text-lg">Message Sent Successfully!</h3>
+                    <h3 className="font-bold text-lg">Message Sent!</h3>
                     <p className="text-sm text-emerald-100">
-                      Thank you for contacting us. We'll get back to you soon.
+                      We’ll contact you soon.
                     </p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setIsSent(false)}
-                  className="text-white hover:text-emerald-100 transition-colors"
-                >
-                  <FaTimes className="text-lg" />
+                <button onClick={() => setIsSent(false)}>
+                  <FaTimes />
                 </button>
               </div>
             </div>
@@ -120,47 +112,34 @@ const ContactUs = () => {
         )}
       </AnimatePresence>
 
-      {/* Hero Header Section - UPDATED WITH BACKGROUND IMAGE */}
-      <section className="relative h-[450px] md:h-[550px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
+      {/* HERO */}
+      <section className="relative h-[400px] md:h-[550px] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${contactHeroBg})` }}
         >
-          {/* Dark Overlay for contrast */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div
+        <div className="relative z-10 text-center px-4">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-7xl font-bold text-white mb-4"
           >
-            <div className="inline-flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-0.5 bg-[#FEA116]"></div>
-              <span className="uppercase font-bold text-[#FEA116] tracking-widest text-sm">
-                Get In Touch
-              </span>
-              <div className="w-12 h-0.5 bg-[#FEA116]"></div>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-              Contact <span className="text-[#FEA116]">Us</span>
-            </h1>
-            
-            <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-              Have questions or need assistance? Reach out to us anytime. 
-              We're here to make your stay unforgettable.
-            </p>
-          </motion.div>
+            Contact <span className="text-[#FEA116]">Us</span>
+          </motion.h1>
+          <p className="text-gray-200 max-w-xl mx-auto">
+            Have questions or need assistance? Reach out anytime.
+          </p>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 -mt-20 relative z-20">
+      {/* CONTENT */}
+      <div className="container mx-auto px-4 py-12 -mt-24 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          {/* Contact Information Cards */}
+
+          {/* INFO */}
           <div className="space-y-4">
             {contactInfo.map((info, index) => (
               <motion.div
@@ -168,109 +147,87 @@ const ContactUs = () => {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-5 hover:shadow-2xl transition-all group"
+                className="bg-white p-5 rounded-2xl shadow flex gap-5"
               >
-                <div className={`p-4 bg-gradient-to-br ${info.color} rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                <div className={`p-4 bg-gradient-to-br ${info.color} rounded-xl text-white`}>
                   {info.icon}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">{info.title}</h3>
-                  {info.details.map((line, i) => (
-                    <p key={i} className="text-gray-500 text-sm">{line}</p>
+                  <h3 className="font-bold">{info.title}</h3>
+                  {info.details.map((d, i) => (
+                    <p key={i} className="text-gray-500 text-sm">{d}</p>
                   ))}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Form and Map Container */}
+          {/* FORM + MAP */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100"
-            >
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a Message</h2>
-              <form onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 ml-1">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#FEA116] outline-none transition-all"
-                    placeholder="Full Name"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 ml-1">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#FEA116] outline-none transition-all"
-                    placeholder="Email Address"
-                    required
-                  />
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 ml-1">Subject</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#FEA116] outline-none transition-all"
-                    placeholder="Topic of discussion"
-                    required
-                  />
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 ml-1">Message</label>
-                  <textarea
-                    name="message"
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#FEA116] outline-none transition-all resize-none"
-                    placeholder="Write your message here..."
-                    required
-                  ></textarea>
-                </div>
-                <div className="md:col-span-2">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`w-full py-4 rounded-xl font-bold text-white shadow-lg flex items-center justify-center gap-3 transition-all ${
-                      isSending ? 'bg-gray-400' : 'bg-gradient-to-r from-[#FEA116] to-yellow-600'
-                    }`}
-                  >
-                    {isSending ? "Sending..." : "Send Message"} <FaPaperPlane />
-                  </motion.button>
-                </div>
-              </form>
-            </motion.div>
 
-        
-          </div>
-              {/* Map Area */}
-            <div className="rounded-3xl shadow-xl overflow-hidden h-64 border-4 border-white" style={{width : "1250px"}}>
+            {/* FORM */}
+            <div className="bg-white rounded-3xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
+
+              <form onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="input"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="input"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="md:col-span-2 input"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="md:col-span-2 input resize-none"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="md:col-span-2 bg-gradient-to-r from-[#FEA116] to-yellow-600 text-white py-4 rounded-xl font-bold flex justify-center gap-2"
+                >
+                  {isSending ? "Sending..." : "Send Message"} <FaPaperPlane />
+                </button>
+              </form>
+            </div>
+
+            {/* MAP (RESPONSIVE FIXED) */}
+            <div className="rounded-3xl overflow-hidden shadow-xl w-full h-64 md:h-80 lg:h-96">
               <iframe
                 title="Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.750383173748!2d77.6186422!3d12.9237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f9d99776d3%3A0x7e4465551f87961b!2sMadiwala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715421234567!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.750383173748!2d77.6186422!3d12.9237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f9d99776d3%3A0x7e4465551f87961b!2sMadiwala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715421234567!5m2!1sen!2sin"
+                className="w-full h-full border-0"
                 loading="lazy"
               ></iframe>
             </div>
+
+          </div>
         </div>
       </div>
     </main>

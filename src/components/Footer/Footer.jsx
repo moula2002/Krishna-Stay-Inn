@@ -73,8 +73,8 @@ const Footer = () => {
     },
     { 
       icon: <FaEnvelope />, 
-      text: "srikrishnastay@gmail.com", 
-      link: "mailto:srikrishnastay@gmail.com",
+      text: "srikrishnastay@gmail.com", text: "krishnastayinn2026@gmail.com",
+      link: "mailto:srikrishnastay@gmail.com",  link: "mailto:krishnastayinn2026@gmail.com",
       color: "text-amber-200"
     },
     { 

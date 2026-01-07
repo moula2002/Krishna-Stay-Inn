@@ -61,7 +61,7 @@ const HeroSection = () => {
       description: "Enjoy our state-of-the-art facilities designed for your ultimate comfort",
       features: [
         { icon: MdKingBed, label: "Premium Beds" },
-        { icon: FaParking, label: "Valet Parking" },
+       { icon: MdRoomService, label: "Daily Housekeeping"},
        { icon: MdKingBed, label: "Premium Beds" },
       ],
     },

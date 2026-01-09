@@ -6,16 +6,16 @@ import {
   FaMapMarkerAlt,
   FaWifi,
   FaTv,
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
+
+
   FaArrowUp,
-  FaWhatsapp
+ 
 } from "react-icons/fa";
 import { 
   MdHotel, 
   MdRestaurant, 
-  MdSecurity
+  MdSecurity,
+  MdLocationOn
 } from "react-icons/md";
 import { TbAirConditioning } from "react-icons/tb";
 import { GiWaterDrop } from "react-icons/gi";
@@ -45,7 +45,6 @@ const Footer = () => {
     { name: "Gallery", link: "/gallery" },
     { name: "Rooms", link: "/rooms" },
     { name: "Contact Us", link: "/contact" },
-     
   ];
 
   const facilities = [
@@ -57,12 +56,7 @@ const Footer = () => {
     { icon: <MdSecurity />, name: "24/7 Security", color: "text-red-400" },
   ];
 
-  const socialLinks = [
-    { icon: <FaFacebookF />, link: "#", color: "hover:bg-red-800", bg: "bg-red-900" },
-    { icon: <FaInstagram />, link: "#", color: "hover:bg-rose-700", bg: "bg-rose-800" },
-    { icon: <FaYoutube />, link: "#", color: "hover:bg-red-700", bg: "bg-red-600" },
-    { icon: <FaWhatsapp />, link: "#", color: "hover:bg-green-700", bg: "bg-green-600" },
-  ];
+  
 
   const contactInfo = [
     { 
@@ -73,8 +67,8 @@ const Footer = () => {
     },
     { 
       icon: <FaEnvelope />, 
-      text: "srikrishnastay@gmail.com", text: "krishnastayinn2026@gmail.com",
-      link: "mailto:srikrishnastay@gmail.com",  link: "mailto:krishnastayinn2026@gmail.com",
+      text: "krishnastayinn2026@gmail.com",
+      link: "mailto:krishnastayinn2026@gmail.com",
       color: "text-amber-200"
     },
     { 
@@ -103,32 +97,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#2D0B0B] via-[#1a0505] to-black text-white pt-16 pb-8 mt-20 overflow-hidden">
-      {/* Animated Particles */}
+    <footer className="relative bg-gradient-to-br from-[#0B1120] via-[#1E293B] to-[#0F172A] text-white pt-16 pb-8 mt-20 overflow-hidden">
+      {/* Simple gradient background without animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-rose-400 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              opacity: [0.1, 0.5, 0.1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-        
-        {/* Maroon Gradient Orbs */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-red-900/20 rounded-full blur-[100px]"></div>
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-maroon-900/20 rounded-full blur-[100px]"></div>
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-cyan-500/5 via-blue-500/3 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-purple-500/5 via-pink-500/3 to-transparent rounded-full blur-[100px]"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -137,115 +110,182 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-10 mb-12"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12"
         >
           {/* Brand Section */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <div className="flex items-center gap-3 mb-6">
+          <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-red-600 rounded-lg blur-md opacity-40"></div>
-                <div className="relative bg-gradient-to-br from-red-800 to-maroon-950 p-3 rounded-lg border border-red-700/30">
-                  <MdHotel className="text-3xl text-rose-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-md opacity-40"></div>
+                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-3 rounded-lg border border-slate-700/50 shadow-xl">
+                  <MdHotel className="text-2xl text-cyan-100" />
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-rose-200 to-amber-200 bg-clip-text text-transparent">
+                <h2 className="text-xl font-bold bg-gradient-to-r from-cyan-200 via-blue-200 to-purple-200 bg-clip-text text-transparent">
                   Krishna Stay Inn
                 </h2>
-                <p className="text-xs uppercase tracking-widest text-rose-300/60">Luxury Boutique Stay</p>
+                <p className="text-xs uppercase tracking-widest text-cyan-300/60">Premium Boutique Stay</p>
               </div>
             </div>
             
-            <p className="text-gray-300 leading-relaxed text-sm">
-              Welcome to Krishna Stay Inn, your premium sanctuary in Bengaluru. 
-              We blend traditional hospitality with modern luxury for an 
-              unforgettable Karnataka experience.
+            <p className="text-slate-300 leading-relaxed text-sm">
+              Experience luxury redefined at Krishna Stay Inn, where modern elegance meets 
+              traditional hospitality in the heart of Bengaluru.
             </p>
             
-            <div className="flex gap-3">
-              {socialLinks.map((social, idx) => (
+          </motion.div>
+
+          {/* Links & Facilities */}
+          <motion.div variants={itemVariants} className="lg:col-span-1">
+            <div className="grid grid-cols-2 gap-8">
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
+                  <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></div>
+                  <span className="bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">Explore</span>
+                </h3>
+                <ul className="space-y-2">
+                  {quickLinks.map((item, index) => (
+                    <li key={index} className="relative">
+                      <Link
+                        to={item.link}
+                        onClick={scrollToTop}
+                        onMouseEnter={() => setHoveredLink(index)}
+                        onMouseLeave={() => setHoveredLink(null)}
+                        className="flex items-center gap-2 py-1.5 group"
+                      >
+                        <FaGreaterThan className={`text-[8px] transition-all ${hoveredLink === index ? 'text-cyan-400 translate-x-0.5' : 'text-slate-500'}`} />
+                        <span className={`text-xs text-slate-300 group-hover:text-white transition-colors ${hoveredLink === index ? 'font-semibold' : ''}`}>
+                          {item.name}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Amenities */}
+              <div>
+                <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
+                  <div className="w-1.5 h-4 bg-gradient-to-b from-purple-400 to-pink-500 rounded-full"></div>
+                  <span className="bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent">Amenities</span>
+                </h3>
+                <div className="gridgap-2">
+                  {facilities.slice(0, 4).map((facility, idx) => (
+                    <motion.div 
+                      key={idx}
+                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(30, 41, 59, 0.5)' }}
+                      className="flex items-center gap-2 p-2 rounded-lg bg-slate-800/30 border border-slate-700/50 hover:border-cyan-500/30 transition-all backdrop-blur-sm"
+                    >
+                      <span className={`${facility.color} text-sm`}>{facility.icon}</span>
+                      <span className="text-[10px] font-medium text-slate-300 truncate">{facility.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Section */}
+          <motion.div variants={itemVariants} className="lg:col-span-1">
+            <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
+              <div className="w-1.5 h-4 bg-gradient-to-b from-blue-400 to-cyan-500 rounded-full"></div>
+              <span className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">Connect</span>
+            </h3>
+            <div className="space-y-3">
+              {contactInfo.map((contact, idx) => (
                 <motion.a
                   key={idx}
-                  href={social.link}
-                  whileHover={{ y: -5, backgroundColor: '#7f1d1d' }}
-                  className={`${social.bg} p-3 rounded-xl transition-all duration-300 shadow-lg border border-white/5`}
+                  href={contact.link}
+                  whileHover={{ x: 5 }}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:border-cyan-500/30 transition-all group backdrop-blur-sm"
                 >
-                  {social.icon}
+                  <div className={`text-sm ${contact.color} group-hover:scale-110 transition-transform`}>
+                    {contact.icon}
+                  </div>
+                  <span className="text-xs text-slate-300 group-hover:text-white truncate">
+                    {contact.text}
+                  </span>
                 </motion.a>
               ))}
             </div>
           </motion.div>
 
-          {/* Links Section */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-3">
-              <div className="w-1.5 h-6 bg-red-600 rounded-full"></div>
-              Explore
+          {/* Map Section */}
+          <motion.div variants={itemVariants} className="lg:col-span-1">
+            <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
+              <div className="w-1.5 h-4 bg-gradient-to-b from-pink-400 to-rose-500 rounded-full"></div>
+              <span className="bg-gradient-to-r from-pink-200 to-rose-200 bg-clip-text text-transparent">Location</span>
             </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((item, index) => (
-                <li key={index} className="relative">
-                  <Link
-                    to={item.link}
-                    onClick={scrollToTop}
-                    onMouseEnter={() => setHoveredLink(index)}
-                    onMouseLeave={() => setHoveredLink(null)}
-                    className="flex items-center gap-3 py-1.5 group"
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl overflow-hidden shadow-2xl backdrop-blur-sm">
+              {/* Map Container */}
+              <div className="h-48 relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.750383173748!2d77.6186422!3d12.9237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f9d99776d3%3A0x7e4465551f87961b!2sMadiwala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715421234567!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Krishna Stay Inn Location - Madivala, Bangalore"
+                  className="absolute inset-0"
+                />
+                
+                {/* Overlay with Directions Button */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Madivala+Market+Bangalore+560068"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-xs font-medium py-2.5 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    <FaGreaterThan className={`text-[10px] transition-all ${hoveredLink === index ? 'text-red-500 translate-x-1' : 'text-gray-500'}`} />
-                    <span className={`text-gray-300 group-hover:text-white transition-colors ${hoveredLink === index ? 'font-semibold' : ''}`}>
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Amenities Section */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-3">
-              <div className="w-1.5 h-6 bg-amber-600 rounded-full"></div>
-              Amenities
-            </h3>
-            <div className="grid grid-cols-2 gap-2">
-              {facilities.map((facility, idx) => (
-                <div key={idx} className="flex items-center gap-2.5 p-2 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
-                  <span className={`${facility.color} text-lg`}>{facility.icon}</span>
-                  <span className="text-xs font-medium text-gray-300">{facility.name}</span>
+                    <FaMapMarkerAlt className="text-xs" />
+                    Get Directions
+                  </a>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Contact Section */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-3">
-              <div className="w-1.5 h-6 bg-rose-600 rounded-full"></div>
-              Connect
-            </h3>
-            <div className="space-y-3">
-              {contactInfo.map((contact, idx) => (
-                <a
-                  key={idx}
-                  href={contact.link}
-                  className="flex items-center gap-4 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-red-500/30 transition-all group"
-                >
-                  <div className={`text-lg ${contact.color} group-hover:scale-110 transition-transform`}>
-                    {contact.icon}
+                
+                {/* Location Marker Overlay */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="relative"
+                  >
+                    <motion.div
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full"
+                    />
+                    <div className="relative bg-gradient-to-br from-cyan-500 to-blue-600 text-white p-2 rounded-full shadow-xl">
+                      <MdLocationOn className="text-lg" />
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+              
+              {/* Address below map */}
+              <div className="p-3 bg-gradient-to-r from-slate-900/20 via-slate-800/10 to-slate-900/20">
+                <div className="flex items-center justify-center gap-2 mb-1">
+                  <div className="p-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg">
+                    <FaMapMarkerAlt className="text-cyan-300 text-xs" />
                   </div>
-                  <span className="text-xs text-gray-300 group-hover:text-white truncate">
-                    {contact.text}
-                  </span>
-                </a>
-              ))}
+                  <p className="text-xs font-medium text-white">
+                    Madivala, Bangalore-560068
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:row justify-between items-center gap-4 text-gray-500 text-xs text-center md:text-left">
-          <p>© {new Date().getFullYear()} Krishna Stay Inn. Built with excellence.</p>
+        <div className="pt-6 border-t border-slate-700/50 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs text-center">
+          <p>© {new Date().getFullYear()} Krishna Stay Inn. All rights reserved.</p>
+          <div className="flex items-center gap-2" style={{marginRight: "110px"}}>
+            <span className="text-slate-300">Powered by Innomatrics</span>
+          </div>
         </div>
       </div>
 
@@ -257,9 +297,9 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 p-4 bg-red-700 text-white rounded-2xl shadow-2xl hover:bg-red-600 transition-all"
+            className="fixed bottom-8 right-8 z-50 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl shadow-2xl hover:from-cyan-600 hover:to-blue-700 transition-all hover:shadow-3xl hover:scale-105 active:scale-95"
           >
-            <FaArrowUp />
+            <FaArrowUp className="text-sm" />
           </motion.button>
         )}
       </AnimatePresence>

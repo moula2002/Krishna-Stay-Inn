@@ -87,7 +87,7 @@ const Header = () => {
                 href="mailto:krishnastayinn@gmail.com"
                 className="font-medium text-xs sm:text-sm text-gray-700 hover:text-[#4d142f] transition-colors duration-300"
               >
-                krishnastayinn@gmail.com
+                krishnastayinn@gmail.com || krishnastayinn2026@gmail.com
               </a>
             </div>
 

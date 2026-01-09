@@ -52,6 +52,7 @@ const HeroSection = () => {
         { icon: MdKingBed, label: "Premium Beds" },
         { icon: FaWifi, label: "High-Speed WiFi" },
         { icon: FaShower, label: "Rain Shower" },
+        { icon: MdKingBed, label: "Premium Beds" },
       ],
     },
     {
@@ -63,6 +64,7 @@ const HeroSection = () => {
         { icon: MdKingBed, label: "Premium Beds" },
        { icon: MdRoomService, label: "Daily Housekeeping"},
        { icon: MdKingBed, label: "Premium Beds" },
+        { icon: FaWifi, label: "High-Speed WiFi" },
       ],
     },
     {
@@ -74,6 +76,7 @@ const HeroSection = () => {
         { icon: MdRoomService, label: "Room Service" },
         { icon: TbAirConditioning, label: "Smart AC" },
         { icon: MdRoomService, label: "Daily Housekeeping"},
+        { icon: MdKingBed, label: "Premium Beds" },
       ],
     },
     {
@@ -85,6 +88,7 @@ const HeroSection = () => {
         { icon: MdSecurity, label: "Secure Premises"},
         { icon: MdRoomService, label: "Daily Housekeeping"},
         { icon: FaWifi, label: "Free WiFi"},
+        { icon: MdKingBed, label: "Premium Beds" },
       ],
     },
   ];
@@ -155,12 +159,6 @@ const HeroSection = () => {
                   exit="hidden"
                   variants={containerVariants}
                 >
-                  <motion.div
-                    className="hero-badge"
-                    variants={itemVariants}
-                  >
-                    <span>★ Luxury Experience ★</span>
-                  </motion.div>
 
                   <motion.h1 variants={itemVariants}>
                     {slide.title}

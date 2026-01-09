@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FacilitiesSection from "./FacilitiesSection";
+import facility from "../../assets/gallery images/facality.jpg";
 
 const Facilities = () => {
   const title = "FACILITIES";
@@ -9,12 +10,22 @@ const Facilities = () => {
     <main className="relative overflow-hidden">
       {/* Banner Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-        {/* Background with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-          {/* Gradient Overlay */}
+        {/* Background Image with Overlay - Alternative using img element */}
+        <div className="absolute inset-0">
+          {/* Background Image as img element */}
+          <img 
+            src={facility} 
+            alt="Facilities Banner"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          
+          {/* Dark Overlay for Better Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70"></div>
+          
+          {/* Subtle Gradient Accents */}
           <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-amber-600/10 to-orange-600/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-orange-600/10 to-amber-600/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-amber-600/20 to-orange-600/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-orange-600/20 to-amber-600/10 rounded-full blur-3xl"></div>
           </div>
         </div>
 
@@ -46,37 +57,12 @@ const Facilities = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto drop-shadow-lg"
           >
             Experience world-class amenities and premium facilities designed for your comfort
           </motion.p>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl shadow-2xl overflow-hidden"
-          >
-            <span className="relative flex items-center gap-3">
-              Explore Facilities
-              <svg
-                className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </span>
-          </motion.button>
+       
         </div>
 
         {/* Scroll Indicator */}
@@ -86,10 +72,10 @@ const Facilities = () => {
           transition={{ delay: 1 }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         >
-          <span className="text-gray-400 text-sm mb-2 tracking-widest">
+          <span className="text-gray-300 text-sm mb-2 tracking-widest drop-shadow-md">
             SCROLL
           </span>
-          <div className="w-6 h-10 border-2 border-amber-500 rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-amber-500 rounded-full flex justify-center backdrop-blur-sm bg-black/20">
             <motion.div
               className="w-1 h-3 bg-amber-500 rounded-full mt-2"
               animate={{ y: [0, 10, 0] }}

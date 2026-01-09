@@ -66,7 +66,7 @@ const ContactUs = () => {
     {
       icon: <FaPhoneAlt className="text-xl" />,
       title: "Phone Number",
-      details: ["+91 98765 43210", "+91 12345 67890"],
+      details: ["+91 9972014954"],
       color: "from-purple-500 to-pink-400"
     },
     {

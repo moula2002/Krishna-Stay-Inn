@@ -16,6 +16,14 @@ const Gallery = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // WhatsApp contact function
+  const handleWhatsAppContact = () => {
+    const phoneNumber = "+919972014954";
+    const message = "Hello! I'm interested in learning more about Shri Krishna Stay. Could you please provide me with more information?";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,7 +47,7 @@ const Gallery = () => {
 
   return (
     <main className="flex flex-col gap-0">
-      {/* Hero Section - UPDATED WITH BACKGROUND IMAGE */}
+      {/* Hero Section */}
       <section className="relative flex justify-center items-center min-h-screen overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0">
@@ -48,7 +56,7 @@ const Gallery = () => {
             alt="Gallery Background" 
             className="w-full h-full object-cover"
           />
-          {/* Darker Overlay to make text pop (Removed the solid black/blue gradient) */}
+          {/* Darker Overlay to make text pop */}
           <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
         </div>
 
@@ -88,6 +96,18 @@ const Gallery = () => {
               Immerse yourself in the beauty and elegance of Shri Krishna Stay through 
               our curated collection of premium photographs
             </motion.p>
+
+            {/* Contact Button in Hero Section */}
+            <motion.button
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleWhatsAppContact}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#FEA116] text-white font-bold rounded-full hover:bg-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <span className="text-xl">💬</span>
+              Contact via WhatsApp
+            </motion.button>
           </motion.div>
         </div>
 
@@ -163,6 +183,8 @@ const Gallery = () => {
               </motion.div>
             ))}
           </div>
+
+          
         </div>
       </motion.section>
 
@@ -193,21 +215,51 @@ const Gallery = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-[#FEA116] font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleWhatsAppContact}
+                className="px-8 py-3 bg-white text-[#FEA116] font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg flex items-center gap-2"
               >
-                Book Your Stay
+                <span className="text-lg">💬</span>
+                Contact Us via WhatsApp
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300"
-              >
-                Contact Us
-              </motion.button>
+            
             </div>
+
+    
           </div>
         </div>
       </motion.section>
+
+      {/* Floating WhatsApp Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="fixed bottom-6 right-6 z-50"
+      >
+        <motion.button
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={handleWhatsAppContact}
+          className="bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center"
+        >
+          <div className="relative">
+            <span className="text-2xl">💬</span>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute inset-0 bg-green-500 rounded-full -z-10"
+            ></motion.div>
+          </div>
+        </motion.button>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5 }}
+          className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+        >
+          Live
+        </motion.div>
+      </motion.div>
     </main>
   );
 }
